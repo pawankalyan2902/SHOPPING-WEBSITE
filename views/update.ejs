@@ -1,0 +1,44 @@
+<%-include("includes/head",{title:"manage_products"}) %>
+    <link rel="stylesheet" href="/styles/manage_products.css">
+    <script src="/javascript/preview.js" defer></script>
+
+    <body>
+        <%-include("includes/header") %>
+            <main>
+                <form action="/admin/post_update/<%=details._id%>" method="post" enctype="multipart/form-data">
+                    <ul id="manage_orders">
+                        <li>
+                            <h1>Update orders</h1>
+                        </li>
+                        <li>
+                            <label for="title">Title</label>
+                            <input type="text" id="title" name="title" value="<%=details.title%>">
+                        </li>
+                        <li>
+                            <label for="image">Image</label>
+                            <div id="file">
+                                <input type="file" id="image" name="images" >
+                                <img class="preview" src=""
+                                    alt="Not yet">
+                            </div>
+                        </li>
+                        <li>
+                            <label for="summary">Summary</label>
+                            <input type="text" id="summary" name="summary" value="<%=details.summary%>" >
+                        </li>
+                        <li>
+                            <label for="price">Price</label>
+                            <input type="text" id="price" name="price"  value="<%=details.price%>"  >
+                        </li>
+                        <li>
+                            <label for="description">Description</label>
+                            <textarea name="description" id="description" cols="30" rows="10"><%=details.description%></textarea>
+                        </li>
+                        <div id="sub_res">
+                            <li><button type="reset" id="reset">Reset</button></li>
+                            <li><button type="submit" id="submit">Update</button></li>
+                        </div>
+                    </ul>
+                </form>
+            </main>
+    </body>

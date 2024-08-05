@@ -1,0 +1,25 @@
+<header>
+    <ul id="header">
+        <li id="logo"><a href="/">AWS</a></li>
+        <span id="hamberger" class="material-symbols-outlined">
+            menu
+            </span>
+        <nav id="nav">
+            <% if(locals.isuser){ %>
+                <li><a href="/">Shop</a></li>
+                <li><a href="/cart">Cart</a><span id="count"><%=locals.nos%></span></li>
+                <li><a href="/order">Orders</a></li>
+                <li><a href="/logout">logout</a></li>
+                <% }else if(locals.isadmin) { %>
+                    <li><a href="/admin/manage_products">Manged products</a></li>
+                    <li><a href="/admin/manage_orders">Managed Order</a></li>
+                    <li><a href="/logout">logout</a></li>
+                    <% } else{%>
+                        <li><a href="/">Shop</a></li>
+                        <li><a href="/cart">Cart</a><span id="count"><%=locals.nos%></span></li>
+                        <li><a href="/signup">Signup</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <% } %>
+        </nav>
+    </ul>
+</header>

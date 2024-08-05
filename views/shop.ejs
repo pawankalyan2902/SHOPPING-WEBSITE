@@ -1,0 +1,49 @@
+<%-include("includes/head",{title:"Home_page"}) %>
+
+    <body>
+        <%-include("includes/header") %>
+            <main id="menu">
+                <div id="main_heading">
+                    <% if(locals.isadmin) {%>
+                        <h1>Product administration</h1>
+                        <h2>Manage products</h2>
+                        <a href="/admin/manage_products">Add product</a>
+                        <% } %>
+                            <%if(!product_details.length){%>
+                                <h1>No products added yet!Please stay tuned</h1>
+                                <% }else{ %>
+                                    <h1>ALL Products</h1>
+                </div>
+
+                <ul id="products">
+                    <% for(const data of product_details) {%>
+                        <div id="layouts">
+                            <li> <img id="img" src="<%=data.image_path%>" alt="">
+                            </li>
+                            <div>
+                                <li>
+                                    <%=data.title %>
+                                </li>
+                                <li>
+                                    <%=data.summary%>
+                                </li>
+                                <% if(locals.isadmin){ %>
+                                    <div id="admin_operation">
+                                        <li id="view_edit"><a href="/admin/edit/<%=data._id%>">View and Edit</a></li>
+                                        <li id="view_delete"><a href="/admin/delete/<%=data._id%>"> Delete</a></li>
+                                    </div>
+                                    <% } %>
+
+                                        <% if(!locals.isadmin){ %>
+                                            <li id="view_details"><a href="/view/<%=data._id %>">View Details</a></li>
+                                            <% } %>
+                            </div>
+                        </div>
+                        <% } %>
+                </ul>
+                <% } %>
+            </main>
+            <footer id="user_details"><%=locals.user_name%></footer>
+    </body>
+
+    </html>

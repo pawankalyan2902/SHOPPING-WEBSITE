@@ -1,0 +1,48 @@
+main
+{
+    width: 50%;
+    margin: auto;
+}
+
+#state
+{
+    background-color:  rgb(196, 135, 4);
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+}
+
+#product
+{
+    list-style:circle;
+    color: aliceblue;
+    margin-left: 2rem;
+}
+
+#product::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: white; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+  }
+
+#cart_data
+{
+    background-color: rgb(55, 51, 51);
+    border-radius: 0.5rem;
+    padding-top: 0rem;
+    font-size: large;
+}
+#orders
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center
+};
+
+#cost
+{
+  color:rgb(196, 135, 4)
+}

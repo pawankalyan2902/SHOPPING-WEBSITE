@@ -1,0 +1,31 @@
+<%-include("includes/head",{title:"orders"}) %>
+    <!-- ejs -->
+    <link rel="stylesheet" href="/styles/cart.css">
+    <link rel="stylesheet" href="/styles/orders.css">
+    </head>
+
+    <body>
+        <%-include("includes/header") %>
+      
+            <main>
+                <% if(!product_details.length){ %>
+                    <h1 id="cart_header">No orders yet!Start ordering today for getting best products</h1>
+                    <% }else{ %>
+                <h1 id="cart_header">All Your Orders</h1>
+                <%for(const data of product_details){%>
+                <ul id="cart_data">
+                    <li id="orders">
+                        <p><span id="cost">$<%=data.orders.value%></span> -<%=data.orders.date%></p>
+                        <p id="state" ><%=data.orders.state%>
+                        </p>
+                    </li>
+                    <li id="product">
+                       <%=data.title%> -$<%=data.orders.value%> ($<%=data.price%>*<%=data.orders.value/data.price%>)
+                    </li>
+                </ul>
+                <% } %>
+                <% } %>
+            </main>
+           
+    </body>
+

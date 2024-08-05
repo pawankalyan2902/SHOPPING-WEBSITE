@@ -1,0 +1,31 @@
+<%-include("includes/head",{title:"Login"}) %>
+    <link rel="stylesheet" href="/styles/sign_up.css">
+
+    <body>
+        <%-include("includes/header") %>
+            <main>
+                <h1 id="sign_up_header">Login</h1>
+                <% if (login_data.error) { %>
+                    <p id="input-error"><%= login_data.error_message %></p>
+                  <% } %>
+                <form action="login_form" method="post">
+                    <ul id="sign_up_form">
+                        <li>
+                            <input type="hidden" name="_csrf" value="<%=locals.token %>">
+                        </li>
+                        <li>
+                            <label for="email">E-Mail</label>
+                            <input type="email" id="email" name="email" value="<%=login_data.email%>" required>
+                        </li>
+                        <li>
+                            <label for="Passwrod">Password</label>
+                            <input type="password" id="Password" name="password" required>
+                        </li>
+                        <li>
+                            <button type="submit">Login</button>
+                        </li>
+                        <li id="log">
+                            <p><a href="">Create a new user</a></p>
+                        </li>
+            </main>
+    </body>

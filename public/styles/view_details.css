@@ -1,0 +1,66 @@
+#details
+{
+    width: 70%;
+    margin: auto;
+}
+
+#first_dml
+{
+    display: flex;
+    flex-direction: row;
+   background-color: rgba(0, 0, 0, 0.488);
+   padding: 5rem 2rem;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+#first_dml div{
+    margin-left:3rem ;
+
+}
+
+#first_dml img{
+    transform: rotate(342deg);
+    display: block;
+    width: 45%;
+    height: 45%;
+}
+
+#first_dml p,h1{
+    color: aliceblue;
+    margin-bottom: 2rem;
+}
+
+#first_dml button{
+    text-decoration: none;
+    color: aliceblue;
+    background-color: rgb(223, 163, 34);
+    padding: 0.7rem 1rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+#first_dml button:hover{
+    background-color:rgba(223, 163, 34, 0.65) ;
+}
+
+#product_detail
+{
+    padding: 2rem;
+    word-spacing: 0.1rem;
+    background-color: rgba(255, 255, 255, 0.121);
+    color: wheat;
+}
+
+#proceed{
+    text-decoration: none;
+    color: aliceblue;
+    background-color: rgb(218 108 39);
+    padding: 0.7rem 1rem;
+    border-radius: 0.3rem;
+    margin-top: 1.2rem;
+    display: block;
+}
+#proceed:hover{
+    background-color: rgba(220, 109, 40, 0.72);
+}

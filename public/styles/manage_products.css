@@ -1,0 +1,85 @@
+#manage_orders
+{
+    width: 50%;
+    margin: auto;
+    color:aliceblue;
+}
+
+#manage_orders h1{
+    color: rgb(222 209 209);
+    font-weight: 800;
+}
+
+#manage_orders li
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+#manage_orders li input,textarea
+{
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    font-size: x-large;
+    resize: none;
+}
+#manage_orders label
+{
+    font-size: larger;
+    margin-bottom: 0.3rem;
+}
+#sub_res
+{
+    display: flex;
+    flex-direction: row;
+    border: transparent;
+    align-items: center;
+    justify-content: normal;
+    margin-bottom: 3rem;
+}
+
+#submit
+{
+    padding: 0.5rem 2rem;
+    background-color: rgb(196, 135, 4);
+    color: aliceblue;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-size: larger;
+    margin-right: 0.4rem;
+}
+
+#reset
+{
+    padding: 0.5rem 2rem;
+    border:0.1rem solid rgb(196, 135, 4);
+    color:rgb(196, 135, 4) ;
+    background-color: rgb(37 36 36);
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-size: larger;
+    margin-right: 0.4rem;
+}
+
+input:focus ,
+textarea:focus{
+    background-color:rgba(255, 217, 135, 0.811) ;
+    color: black;
+    outline: none;
+}
+
+#file
+{
+    display: flex;
+    flex-direction:row;
+}
+
+img
+{
+    width: 5rem;
+}
+
+/* java script css */
+.preview{
+    display: none;
+}

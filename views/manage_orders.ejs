@@ -1,0 +1,55 @@
+<%-include("includes/head",{title:"manage_orders"}) %>
+    <link rel="stylesheet" href="/styles/cart.css">
+    <link rel="stylesheet" href="/styles/orders.css">
+    <link rel="stylesheet" href="/styles/manage_order.css">
+
+    <body>
+        <%-include("includes/header") %>
+            <main>
+                <% if(!prod_data.length){ %>
+                    <h1 id="cart_header">No orders placed Yet!</h1>
+                    <%}else{%>
+                <h1 id="cart_header">All Your Orders</h1>
+                <% for(let data of prod_data) {%>
+                <ul id="cart_data">
+                        <li id="orders">
+                            <p><span>
+                                $<%=data.orders.value%> 
+                                </span> -<%=data.orders.date%>
+                            </p>
+                            <p style="background-color:  rgb(196, 135, 4);padding: 0.7rem;border-radius: 0.5rem;">
+                                <%=data.orders.state%>
+                            </p>
+                        </li>
+                        <li id="name">
+                            <p>
+                                <%=data.personal_info.personal_details.name%>
+                            </p>
+                        </li>
+                        <li id="addsress">
+                            <p>
+                                <%=data.personal_info.personal_details.street%> -
+                                    <%=data.personal_info.personal_details.city%>
+                                       ( <%=data.personal_info.personal_details.postalcode%>)
+                            </p>
+                        </li>
+                        <li id="pd">
+                            <%=data.title%> - $<%=data.orders.value%> ($<%=data.price%> * <%=data.orders.value/data.price%>)
+                        </li>
+                        <li>
+                            <div>
+                                <form action="/admin/order_status/<%=data.orders._id%>" method="post">
+                                <select name="order_status" id="order_status">
+                                    <option value="pending">pending</option>
+                                    <option value="fullfilled">fullfilled</option>
+                                    <option value="Cancelled">Cancelled</option>
+                                </select>
+                                <button id="update" type="submit">Update</button>
+                            </div>
+                        </form>
+                        </li>
+                </ul>
+                <% } %>
+                <% } %>
+            </main>
+    </body>

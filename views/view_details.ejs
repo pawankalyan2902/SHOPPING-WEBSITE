@@ -1,0 +1,24 @@
+<%-include("includes/head",{title:"view_details"}) %>
+    <link rel="stylesheet" href="/styles/view_details.css">
+    <script src="/javascript/Ajax/cart.js" defer></script>
+<body>
+    <%-include("includes/header") %>
+    <main>
+        <ul id="details">
+             <!-- ejs content -->
+            <li id="first_dml">
+                <img src="/<%=data.image_path%>"
+                    alt="">
+                    <div>
+                    <h1><%=data.title%> </h1>
+                    <p><%=data.price%></p>
+                    <button id="cart_btn">Add to Cart</button>
+                    <a href="/cart/<%=data._id%>" id="proceed">Proceed &#8594;</a>
+                </div>
+            </li>
+            <li id="product_detail">
+                <p><%= data.description %></p>
+            </li>
+        </ul>
+    </main>
+</body>

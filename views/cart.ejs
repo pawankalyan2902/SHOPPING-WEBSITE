@@ -1,0 +1,38 @@
+<%-include("includes/head",{title:"Cart"}) %>
+    <link rel="stylesheet" href="/styles/cart.css">
+
+    <body>
+        <%-include("includes/header") %>
+            <main>
+                <%if(!data){%>
+                    <h1 id="cart_header">Cart is empty</h1>
+                    <%} else { %>
+                        <h1 id="cart_header">Your Cart</h1>
+                <ul id="cart_data">
+                    <li>
+                        <form action="/cart_update/<%=data._id%>" method="post">
+                            <div id="form_cart">
+                                    <!-- <input type="hidden" name="_csrf" value="<%=locals.token%>"> -->
+                                <label for="items"><%=data.title%></label>
+                                <div>
+                                    <input type="number" id="items" name="items" value=<%=locals.nos%>>
+                                    <button type="submit">Update</button>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                    <li>
+                        <p><%=data.price%>$</p>
+                    </li>
+                </ul>
+                <div id="cart_footer">
+                    <h2>Total:<%=total_price%>$</h2>
+                    <% if(locals.isuser) {%>
+                        <a href="/order/<%=data._id%>">Buy products</a></li>
+                        <% }else{%>
+                    <a href="/login">Log in to purchase products</a>
+                <%}%>
+                </div>
+                <% } %>
+            </main>
+    </body>
